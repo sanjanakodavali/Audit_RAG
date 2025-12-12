@@ -1,47 +1,33 @@
-# Langchain RAG Tutorial
+# AuditRAG
 
-## Install dependencies
+**AuditRAG** is a minimal **LangChain + ChromaDB** Retrieval-Augmented Generation (RAG) starter that:
+1) builds a local Chroma vector database from your documents, and  
+2) answers questions by retrieving relevant chunks and sending them to an LLM.
 
-1. Do the following before installing the dependencies found in `requirements.txt` file because of current challenges installing `onnxruntime` through `pip install onnxruntime`. 
+---
 
-    - For MacOS users, a workaround is to first install `onnxruntime` dependency for `chromadb` using:
+## What’s Inside
 
-    ```python
-     conda install onnxruntime -c conda-forge
-    ```
-    See this [thread](https://github.com/microsoft/onnxruntime/issues/11037) for additonal help if needed. 
+- `create_database.py` — ingests documents and creates/persists a ChromaDB index
+- `query_data.py` — queries the database and prints an answer + supporting context (depending on your code)
 
-     - For Windows users, follow the guide [here](https://github.com/bycloudai/InstallVSBuildToolsWindows?tab=readme-ov-file) to install the Microsoft C++ Build Tools. Be sure to follow through to the last step to set the enviroment variable path.
+---
 
+## Prerequisites
 
-2. Now run this command to install dependenies in the `requirements.txt` file. 
+- Python 3.9+ recommended  
+- An OpenAI API key (set as an environment variable)
 
-```python
-pip install -r requirements.txt
-```
+> **Environment variable**
+- `OPENAI_API_KEY` must be set for querying (and sometimes embedding), depending on your configuration.
 
-3. Install markdown depenendies with: 
+---
 
-```python
-pip install "unstructured[md]"
-```
+## Setup
 
-## Create database
+### 1) Create a virtual environment (recommended)
 
-Create the Chroma DB.
-
-```python
-python create_database.py
-```
-
-## Query the database
-
-Query the Chroma DB.
-
-```python
-python query_data.py "How does Alice meet the Mad Hatter?"
-```
-
-> You'll also need to set up an OpenAI account (and set the OpenAI key in your environment variable) for this to work.
-
-Here is a step-by-step tutorial video: [RAG+Langchain Python Project: Easy AI/Chat For Your Docs](https://www.youtube.com/watch?v=tcqEUSNCn8I&ab_channel=pixegami).
+**macOS / Linux**
+```bash
+python -m venv .venv
+source .venv/bin/activate
