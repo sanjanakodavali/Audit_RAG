@@ -56,22 +56,4 @@ audit-rag/
   requirements.txt
   README.md
 
-
-## Prerequisites
-
-- Python 3.9+ recommended  
-- An OpenAI API key (set as an environment variable)
-
-> **Environment variable**
-- `OPENAI_API_KEY` must be set for querying (and sometimes embedding), depending on your configuration.
-
----
-
-## Setup
-
-### 1) Create a virtual environment (recommended)
-
-**macOS / Linux**
-```bash
-python -m venv .venv
-source .venv/bin/activate
+```text
