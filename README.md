@@ -56,4 +56,4 @@ audit-rag/
   requirements.txt
   README.md
 
-```text
+---
